@@ -7,3 +7,5 @@ def pipelineId = buildName+"-"+build.number
 
 build("initialise-pipeline", BUILD_SCM_URL:gitUrl,BUILD_COMMIT:revision,BUILD_BRANCH_NAME:branchName,BUILD_SIMPLE_BRANCH_NAME:simpleBranchName, BUILD_NAME:buildName, PIPELINE_ID:pipelineId )
 build("build-maven-project", PIPELINE_ID:pipelineId)
+
+build("unit-test", PIPELINE_ID:pipelineId)
