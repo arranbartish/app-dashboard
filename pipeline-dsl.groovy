@@ -17,3 +17,10 @@ parallel (
     { build("unit-test", PIPELINE_ID:pipelineId) },
     { build("integration-test", PIPELINE_ID:pipelineId) }
 )
+
+switch(simpleBranchName) {
+
+    case ~/(^feature\/.*)/:
+        build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop")
+        break
+}
