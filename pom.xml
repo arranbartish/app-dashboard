@@ -17,7 +17,8 @@
 	</properties>
 
 	<modules>
-		<module>jar-dashboard</module>
+		<module>parent</module>
+        <module>jar-dashboard</module>
 	</modules>
 
 </project>

@@ -5,17 +5,16 @@
 
 	<groupId>com.solvedbysunrise.appdirect</groupId>
 	<artifactId>app-dashboard</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>App Direct Dashboard</name>
 	<description>Spring Boot BFF</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.3.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.solvedbysunrise.appdirect</groupId>
+		<artifactId>app-dashboard-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<properties>
