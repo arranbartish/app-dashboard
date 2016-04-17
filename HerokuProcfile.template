@@ -1,1 +1,2 @@
 web: java -Dserver.port=$PORT -jar  jar-dashboard/target/app-dashboard-[VERSION].jar
+
