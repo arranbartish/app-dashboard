@@ -5,8 +5,14 @@
 
 	<groupId>com.solvedbysunrise.appdirect</groupId>
 	<artifactId>app-dashboard-builder</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.solvedbysunrise.appdirect</groupId>
+        <artifactId>app-dashboard-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>parent/pom.xml</relativePath>
+    </parent>
 
 	<name>App Direct Dashboard Builder</name>
 	<description>Spring Boot BFF</description>
