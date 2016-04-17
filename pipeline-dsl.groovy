@@ -25,6 +25,10 @@ switch(simpleBranchName) {
         break
 
     case ~/(^develop$)/:
+        // nothing to do
+        break
+
+    case ~/(^candidate\/.*)/:
         build("create-release", PIPELINE_ID:pipelineId)
         break
 }
