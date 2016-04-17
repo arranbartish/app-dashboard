@@ -31,4 +31,10 @@ switch(simpleBranchName) {
     case ~/(^candidate\/.*)/:
         build("create-release", PIPELINE_ID:pipelineId)
         break
+
+    case ~/(^release\/.*)/:
+        build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"master")
+        build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop")
+        build("prepare-next-development-version", PIPELINE_ID:pipelineId)
+        break
 }
