@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar  jar-dashboard/target/app-dashboard-0.0.6-SNAPSHOT.jar
