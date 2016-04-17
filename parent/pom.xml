@@ -24,6 +24,12 @@
         <skip.surefire.tests>${skipTests}</skip.surefire.tests>
 	</properties>
 
+    <scm>
+        <connection>scm:git:ssh://git@github.com:arranbartish/app-dashboard.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:arranbartish/app-dashboard.git</developerConnection>
+        <url>https://github.com/arranbartish/app-dashboard</url>
+    </scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
