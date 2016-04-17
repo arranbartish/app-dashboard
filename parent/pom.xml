@@ -59,6 +59,11 @@
                 <artifactId>app-dashboard-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.solvedbysunrise.appdirect</groupId>
+                <artifactId>app-dashboard</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>junit</groupId>

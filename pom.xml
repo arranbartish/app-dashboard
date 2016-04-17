@@ -23,6 +23,7 @@
         <module>utils</module>
 		<module>domain</module>
         <module>jar-dashboard</module>
+        <module>war-dashboard</module>
 	</modules>
 
 </project>
