@@ -49,12 +49,15 @@ switch(simpleBranchName) {
                 {
                     build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"master")
                     build("tag-master-for-release", PIPELINE_ID:pipelineId)
-                    build("migrate-master-to-heroku-repository", PIPELINE_ID:pipelineId)
                 },
                 {
                     build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop")
                     build("prepare-next-development-version", PIPELINE_ID:pipelineId)
                 }
         )
+        break
+
+    case ~/(^master$)/:
+        build("migrate-master-to-heroku-repository", PIPELINE_ID:pipelineId)
         break
 }
