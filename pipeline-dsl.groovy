@@ -37,11 +37,19 @@ switch(simpleBranchName) {
         build("create-release", PIPELINE_ID:pipelineId)
         break
 
+    case ~/(^hotfix\/.*)/:
+        parallel (
+                { build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"master") },
+                { build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop") }
+        )
+        break
+
     case ~/(^release\/.*)/:
         parallel (
                 {
                     build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"master")
                     build("tag-master-for-release", PIPELINE_ID:pipelineId)
+                    build("migrate-master-to-heroku-repository", PIPELINE_ID:pipelineId)
                 },
                 {
                     build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop")
