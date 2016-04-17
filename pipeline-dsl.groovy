@@ -30,7 +30,7 @@ switch(simpleBranchName) {
         break
 
     case ~/(^develop$)/:
-        // nothing to do
+        // nothing to do, our wonderful integration branch
         break
 
     case ~/(^candidate\/.*)/:
