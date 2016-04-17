@@ -33,8 +33,15 @@ switch(simpleBranchName) {
         break
 
     case ~/(^release\/.*)/:
-        build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"master")
-        build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop")
-        build("prepare-next-development-version", PIPELINE_ID:pipelineId)
+        parallel (
+                {
+                    build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"master")
+                    build("tag-master-for-release", PIPELINE_ID:pipelineId)
+                },
+                {
+                    build("merge-branch-to-target", PIPELINE_ID:pipelineId, TARGET_BRANCH:"develop")
+                    build("prepare-next-development-version", PIPELINE_ID:pipelineId)
+                }
+        )
         break
 }
