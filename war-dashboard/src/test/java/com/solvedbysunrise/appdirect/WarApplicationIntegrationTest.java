@@ -35,7 +35,7 @@ public class WarApplicationIntegrationTest {
     }
 
     @Test
-    public void application_will_start() {
+    public void application_will_start_on_tomcat() {
         UriTemplate template = new UriTemplate(getFullyQualifiedUriPattern(dashboardBaseUrl, "/hello"));
         Hello world =  restTemplate.getForEntity(template.expand(), Hello.class).getBody();
         Assert.assertThat(world, is(EXPECTED_WORLD));
