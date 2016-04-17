@@ -5,19 +5,24 @@ def simpleBranchName = params["BUILD_SIMPLE_BRANCH_NAME"]
 def buildName = params["BUILD_NAME"]
 def pipelineId = buildName+"-"+build.number
 
+// setup pipeline data and isolate commit
 build("initialise-pipeline", BUILD_SCM_URL:gitUrl,
                             BUILD_COMMIT:revision,
                             BUILD_BRANCH_NAME:branchName,
                             BUILD_SIMPLE_BRANCH_NAME:simpleBranchName,
                             BUILD_NAME:buildName,
                             PIPELINE_ID:pipelineId )
+
+// build artifact(s) to be tested and deployed
 build("build-maven-project", PIPELINE_ID:pipelineId )
 
+// Run tests and suites against the build artifacts
 parallel (
     { build("unit-test", PIPELINE_ID:pipelineId) },
     { build("integration-test", PIPELINE_ID:pipelineId) }
 )
 
+// automated gitflow behaviour
 switch(simpleBranchName) {
 
     case ~/(^feature\/.*)/:
