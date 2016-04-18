@@ -17,6 +17,7 @@
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -79,6 +80,14 @@
                         <goals>
                             <goal>start</goal>
                         </goals>
+                        <configuration>
+                            <configuration>
+                                <properties>
+                                    <cargo.servlet.port>8081</cargo.servlet.port>
+                                </properties>
+                            </configuration>
+                        </configuration>
+
                     </execution>
                 </executions>
             </plugin>

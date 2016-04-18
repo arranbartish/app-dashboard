@@ -18,8 +18,9 @@ build("build-maven-project", PIPELINE_ID:pipelineId )
 
 // Run tests and suites against the build artifacts
 parallel (
-    { build("unit-test", PIPELINE_ID:pipelineId) },
-    { build("integration-test", PIPELINE_ID:pipelineId) }
+        { build("unit-test", PIPELINE_ID:pipelineId) },
+        { build("integration-test", PIPELINE_ID:pipelineId) },
+        { build("specific-maven-module-test", PIPELINE_ID:pipelineId, MODULE_PATH:"war-dashboard") }
 )
 
 // automated gitflow behaviour
