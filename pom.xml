@@ -17,13 +17,26 @@
 	<name>App Direct Dashboard Builder</name>
 	<description>Spring Boot BFF and components</description>
 
-	<modules>
-		<module>parent</module>
-		<module>interfaces</module>
+    <profiles>
+        <profile>
+            <id>JAR-AND-WAR</id>
+            <modules>
+                <module>parent</module>
+                <module>interfaces</module>
+                <module>utils</module>
+                <module>domain</module>
+                <module>jar-dashboard</module>
+                <module>war-dashboard</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <modules>
+        <module>parent</module>
+        <module>interfaces</module>
         <module>utils</module>
-		<module>domain</module>
+        <module>domain</module>
         <module>jar-dashboard</module>
-        <module>war-dashboard</module>
-	</modules>
+    </modules>
 
 </project>
