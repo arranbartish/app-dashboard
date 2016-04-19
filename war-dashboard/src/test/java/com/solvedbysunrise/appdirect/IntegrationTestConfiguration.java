@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 
 public class IntegrationTestConfiguration implements DashboardConfiguration {
 
-    private static final String TOMCAT_BASE_URL = "http://localhost:8080/app-dashboard-war";
+    private static final String TOMCAT_BASE_URL = "http://localhost:8081/app-dashboard-war";
 
     @Override
     @Bean(name = "dashboardBaseUrl")

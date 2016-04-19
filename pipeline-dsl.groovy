@@ -18,8 +18,9 @@ build("build-maven-project", PIPELINE_ID:pipelineId )
 
 // Run tests and suites against the build artifacts
 parallel (
-    { build("unit-test", PIPELINE_ID:pipelineId) },
-    { build("integration-test", PIPELINE_ID:pipelineId) }
+        { build("unit-test", PIPELINE_ID:pipelineId) },
+        { build("integration-test", PIPELINE_ID:pipelineId) },
+        { build("specific-maven-module-test", PIPELINE_ID:pipelineId, MODULE_PATH:"war-dashboard") }
 )
 
 // automated gitflow behaviour
@@ -30,7 +31,7 @@ switch(simpleBranchName) {
         break
 
     case ~/(^develop$)/:
-        // nothing to do, our wonderful integration branch
+        // nothing to do, our wonderful always green integration branch
         break
 
     case ~/(^candidate\/.*)/:
@@ -58,6 +59,6 @@ switch(simpleBranchName) {
         break
 
     case ~/(^master$)/:
-       // build("migrate-master-to-heroku-repository", PIPELINE_ID:pipelineId)
+        // nothing to do heroku will take it from here
         break
 }

@@ -13,9 +13,10 @@
 	<parent>
 		<groupId>com.solvedbysunrise.appdirect</groupId>
 		<artifactId>app-dashboard-parent</artifactId>
-		<version>0.0.9</version>
+		<version>0.0.10</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
+
 
 	<dependencies>
 		<dependency>
@@ -79,6 +80,14 @@
                         <goals>
                             <goal>start</goal>
                         </goals>
+                        <configuration>
+                            <configuration>
+                                <properties>
+                                    <cargo.servlet.port>8081</cargo.servlet.port>
+                                </properties>
+                            </configuration>
+                        </configuration>
+
                     </execution>
                 </executions>
             </plugin>
