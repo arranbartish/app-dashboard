@@ -33,7 +33,7 @@ public class AppDirectDashboardApplicationIntegrationTest {
 
     private static final Hello EXPECTED_WORLD = new Hello();
     {
-        EXPECTED_WORLD.setWho("world");
+        EXPECTED_WORLD.setWho("arran");
     }
 
 	@Test

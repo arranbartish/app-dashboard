@@ -13,7 +13,7 @@ public class HelloWorldController {
     @RequestMapping(method = GET)
     public Hello sayHello() {
         final Hello helloWorld = new Hello();
-        helloWorld.setWho("world");
+        helloWorld.setWho("arran");
         return helloWorld;
     }
 }

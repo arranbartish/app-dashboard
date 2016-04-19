@@ -59,6 +59,6 @@ switch(simpleBranchName) {
         break
 
     case ~/(^master$)/:
-        build("migrate-master-to-heroku-repository", PIPELINE_ID:pipelineId)
+        // nothing to do heroku will take it from here
         break
 }
