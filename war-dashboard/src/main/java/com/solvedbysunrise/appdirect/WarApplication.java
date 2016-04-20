@@ -1,6 +1,7 @@
 package com.solvedbysunrise.appdirect;
 
 import com.solvedbysunrise.appdirect.config.ProductionConfiguration;
+import com.solvedbysunrise.appdirect.config.WarConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,7 +14,10 @@ public class WarApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(WarApplication.class);
+        return application.sources(new Object[] {
+                AppDirectDashboardApplication.class,
+                WarConfiguration.class
+        });
     }
 
     public static void main(String[] args) throws Exception {
@@ -21,7 +25,7 @@ public class WarApplication extends SpringBootServletInitializer {
                 new Object[] {
                         WarApplication.class,
                         AppDirectDashboardApplication.class,
-                        ProductionConfiguration.class
+                        WarConfiguration.class
                 }, args);
     }
 
