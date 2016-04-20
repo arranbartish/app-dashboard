@@ -20,6 +20,9 @@ public class ProductionConfiguration implements DashboardConfiguration {
     @Value("${testValue:also-did-not-work}")
     private String testValue;
 
+    @Value("${appdirect.api.key:not-my-key}")
+    private String appdirectApiKey;
+
     @Override
     @Bean(name = "dashboardBaseUrl")
     public String dashboardBaseUrl() {
@@ -45,5 +48,11 @@ public class ProductionConfiguration implements DashboardConfiguration {
                 of("database", databaseUrl()),
                 of("url", dashboardBaseUrl()),
                 of("test", testValue()));
+    }
+
+    @Override
+    @Bean(name = "appdirectApiKey")
+    public String appdirectApiKey() {
+        return appdirectApiKey;
     }
 }

@@ -12,5 +12,7 @@ public interface DashboardConfiguration {
 
     String testValue();
 
+    String appdirectApiKey();
+
     Collection<Pair<String, String>> config();
 }
