@@ -1,7 +1,10 @@
 package com.solvedbysunrise.appdirect;
 
 import com.solvedbysunrise.appdirect.config.DashboardConfiguration;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.context.annotation.Bean;
+
+import java.util.Collection;
 
 public class IntegrationTestConfiguration implements DashboardConfiguration {
 
@@ -11,5 +14,20 @@ public class IntegrationTestConfiguration implements DashboardConfiguration {
     @Bean(name = "dashboardBaseUrl")
     public String dashboardBaseUrl() {
         return TOMCAT_BASE_URL;
+    }
+
+    @Override
+    public String databaseUrl() {
+        return null;
+    }
+
+    @Override
+    public String testValue() {
+        return null;
+    }
+
+    @Override
+    public Collection<Pair<String, String>> config() {
+        return null;
     }
 }
