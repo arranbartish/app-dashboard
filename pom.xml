@@ -21,11 +21,6 @@
         <profile>
             <id>JAR-AND-WAR</id>
             <modules>
-                <module>parent</module>
-                <module>interfaces</module>
-                <module>utils</module>
-                <module>domain</module>
-                <module>jar-dashboard</module>
                 <module>war-dashboard</module>
             </modules>
         </profile>
