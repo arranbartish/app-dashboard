@@ -15,4 +15,8 @@ public interface DashboardConfiguration {
     String appdirectApiKey();
 
     Collection<Pair<String, String>> config();
+
+    String oauthConsumerKey();
+
+    String oauthConsumerSecret();
 }
