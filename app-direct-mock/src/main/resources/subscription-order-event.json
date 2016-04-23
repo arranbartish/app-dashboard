@@ -1,0 +1,44 @@
+{
+  "type": "SUBSCRIPTION_ORDER",
+  "marketplace": {
+    "partner": "solvedbysunrise-test",
+    "baseUrl": "https://solvedbysunrise-test.byappdirect.com"
+  },
+  "applicationUuid": null,
+  "flag": "DEVELOPMENT",
+  "creator": {
+    "uuid": "{TOKEN}",
+    "openId": "https://solvedbysunrise-test.byappdirect.com/openid/id/{TOKEN}",
+    "email": "arran.bartish@sap.com",
+    "firstName": "Arran",
+    "lastName": "Bartish",
+    "language": "en",
+    "address": null,
+    "attributes": null
+  },
+  "payload": {
+    "user": null,
+    "company": {
+      "uuid": "{TOKEN}",
+      "externalId": null,
+      "name": "Arran's Company",
+      "email": null,
+      "phoneNumber": null,
+      "website": null,
+      "country": "US"
+    },
+    "account": null,
+    "addonInstance": null,
+    "addonBinding": null,
+    "order": {
+      "editionCode": "FREE",
+      "addonOfferingCode": null,
+      "pricingDuration": "MONTHLY",
+      "items": []
+    },
+    "notice": null,
+    "configuration": {}
+  },
+  "returnUrl": null,
+  "links": []
+}

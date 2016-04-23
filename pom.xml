@@ -31,6 +31,7 @@
         <module>interfaces</module>
         <module>utils</module>
         <module>domain</module>
+        <module>app-direct-mock</module>
         <module>jar-dashboard</module>
     </modules>
 
