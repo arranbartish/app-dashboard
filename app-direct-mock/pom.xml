@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.solvedbysunrise.appdirect</groupId>
-	<artifactId>app-dashboard</artifactId>
+	<artifactId>app-direct-mock</artifactId>
 	<packaging>jar</packaging>
 
-	<name>App Direct Dashboard</name>
-	<description>Spring Boot BFF</description>
+	<name>App Direct mock server</name>
+	<description>mock server for app direct</description>
 
 	<parent>
 		<groupId>com.solvedbysunrise.appdirect</groupId>
@@ -18,64 +18,22 @@
 	</parent>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-cache</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.solvedbysunrise.appdirect</groupId>
             <artifactId>app-dashboard-domain</artifactId>
         </dependency>
         <dependency>
             <groupId>com.solvedbysunrise.appdirect</groupId>
-            <artifactId>app-dashboard-interfaces</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.solvedbysunrise.appdirect</groupId>
             <artifactId>app-dashboard-utils</artifactId>
         </dependency>
-		<dependency>
-			<groupId>com.solvedbysunrise.appdirect</groupId>
-			<artifactId>app-direct-mock</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth</artifactId>
-            <version>2.0.9.RELEASE</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -92,10 +50,6 @@
 			<artifactId>guava</artifactId>
 		</dependency>
         <dependency>
-            <groupId>oauth.signpost</groupId>
-            <artifactId>signpost-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
@@ -109,14 +63,7 @@
         </dependency>
     </dependencies>
 	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+	<build/>
 	
 
 </project>

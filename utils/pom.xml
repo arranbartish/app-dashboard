@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>com.solvedbysunrise.appdirect</groupId>
 		<artifactId>app-dashboard-parent</artifactId>
-		<version>0.0.13</version>
+		<version>0.0.14</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 

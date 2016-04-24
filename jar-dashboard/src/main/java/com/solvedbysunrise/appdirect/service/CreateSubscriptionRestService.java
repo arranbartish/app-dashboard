@@ -21,7 +21,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 @Service
 public class CreateSubscriptionRestService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SubscriptionController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CreateSubscriptionRestService.class);
 
     @Autowired
     private RestTemplate restTemplate;
@@ -42,6 +42,7 @@ public class CreateSubscriptionRestService {
         ResponseEntity<String> response = restTemplate.exchange(
                 signedRequest.getRequestUri(),
                 signedRequest.getHttpMethod(), entity, String.class);
+
 
         LOGGER.info(response.getBody());
     }

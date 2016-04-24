@@ -22,6 +22,8 @@ public class Event extends RefelctiveBean {
 
     private Timestamp notificationTime;
 
+    private String resourceLocation;
+
     public String getId() {
         return id;
     }
@@ -44,5 +46,13 @@ public class Event extends RefelctiveBean {
 
     public void setNotificationTime(Timestamp notificationTime) {
         this.notificationTime = notificationTime;
+    }
+
+    public String getResourceLocation() {
+        return resourceLocation;
+    }
+
+    public void setResourceLocation(String resourceLocation) {
+        this.resourceLocation = resourceLocation;
     }
 }
