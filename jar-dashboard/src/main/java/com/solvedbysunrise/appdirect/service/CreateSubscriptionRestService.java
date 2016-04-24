@@ -43,6 +43,7 @@ public class CreateSubscriptionRestService {
                 signedRequest.getRequestUri(),
                 signedRequest.getHttpMethod(), entity, String.class);
 
+
         LOGGER.info(response.getBody());
     }
 }

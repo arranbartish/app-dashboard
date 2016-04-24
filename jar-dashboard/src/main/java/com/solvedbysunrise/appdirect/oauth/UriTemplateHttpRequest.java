@@ -86,7 +86,11 @@ public class UriTemplateHttpRequest implements HttpRequest {
 
     @Override
     public String getContentType() {
-        return mediaType.getType();
+        return getMediaType().getType();
+    }
+
+    public MediaType getMediaType() {
+        return mediaType;
     }
 
     @Override
