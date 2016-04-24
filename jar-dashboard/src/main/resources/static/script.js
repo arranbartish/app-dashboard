@@ -6,12 +6,12 @@ angular.module("DashApp", ["ngAnimate","ui.bootstrap"])
 
             this.populatePurchases= function(scope, http) {
 
-                scope.purchases = [{ name : "mock1" }, { name : "mock1" }];
-                // http.get('/purchases')
-                //   //  http.get('/status')
-                //     .success(function(response){
-                //         scope.purchases = response;
-                //     });
+                //scope.purchases = [{ name : "mock1" }, { name : "mock1" }];
+                http.get('/purchases')
+                  //  http.get('/status')
+                    .success(function(response){
+                        scope.purchases = response;
+                    });
             };
     })
     .controller("AppPurchases", function($scope, $http, $timeout, $log, PurchaseService){
