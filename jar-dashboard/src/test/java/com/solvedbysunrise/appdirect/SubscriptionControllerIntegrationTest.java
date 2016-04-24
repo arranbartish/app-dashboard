@@ -42,7 +42,7 @@ import static org.springframework.http.MediaType.APPLICATION_XML;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {AppDirectDashboardApplication.class, TestConfiguration.class})
 @WebIntegrationTest
-public class SubscriptionControllerTest {
+public class SubscriptionControllerIntegrationTest {
 
     @Autowired
     private RestTemplate restTemplate;
