@@ -1,6 +1,7 @@
 package com.solvedbysunrise.appdirect;
 
 import com.solvedbysunrise.appdirect.config.TestConfiguration;
+import com.solvedbysunrise.appdirect.dto.Result;
 import com.solvedbysunrise.appdirect.oauth.HttpRequestSigningService;
 import com.solvedbysunrise.appdirect.oauth.OAuthConsumerFactory;
 import com.solvedbysunrise.appdirect.oauth.UriTemplateHttpRequest;
@@ -12,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Rollback;
@@ -25,8 +25,8 @@ import org.springframework.web.util.UriTemplate;
 import java.net.URI;
 
 import static com.solvedbysunrise.appdirect.MockServerController.EVENT_PATH;
-import static com.solvedbysunrise.appdirect.ResultFactory.successfulResult;
-import static com.solvedbysunrise.appdirect.SubscriptionController.SUCCESS_MESSAGE;
+import static com.solvedbysunrise.appdirect.dto.ResultFactory.successfulResult;
+import static com.solvedbysunrise.appdirect.controller.SubscriptionController.SUCCESS_MESSAGE;
 import static com.solvedbysunrise.appdirect.oauth.UriTemplateHttpRequestBuilder.withUrl;
 import static com.solvedbysunrise.appdirect.util.UriUtil.getFullyQualifiedUriPattern;
 import static org.hamcrest.CoreMatchers.is;

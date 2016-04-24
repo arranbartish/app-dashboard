@@ -1,5 +1,6 @@
-package com.solvedbysunrise.appdirect;
+package com.solvedbysunrise.appdirect.controller;
 
+import com.solvedbysunrise.appdirect.dto.Result;
 import com.solvedbysunrise.appdirect.service.CreateSubscriptionRestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static com.solvedbysunrise.appdirect.ResultFactory.failureResult;
-import static com.solvedbysunrise.appdirect.ResultFactory.successfulResult;
+import static com.solvedbysunrise.appdirect.dto.ResultFactory.failureResult;
+import static com.solvedbysunrise.appdirect.dto.ResultFactory.successfulResult;
 import static org.springframework.http.HttpStatus.ACCEPTED;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;

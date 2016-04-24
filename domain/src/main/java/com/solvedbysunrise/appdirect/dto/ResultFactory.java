@@ -1,4 +1,4 @@
-package com.solvedbysunrise.appdirect;
+package com.solvedbysunrise.appdirect.dto;
 
 public class ResultFactory {
 
