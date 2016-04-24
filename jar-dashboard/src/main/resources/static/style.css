@@ -1,0 +1,103 @@
+/* Styles go here */
+
+/* Styling for the ngProgress itself */
+/*#ngProgress {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*z-index: 99998;*/
+    /*background-color: green;*/
+    /*color: green;*/
+    /*box-shadow: 0 0 10px 0; !* Inherits the font color *!*/
+    /*height: 30%;*/
+    /*opacity: 0;*/
+
+    /*!* Add CSS3 styles for transition smoothing *!*/
+    /*-webkit-transition: all 0.5s ease-in-out;*/
+    /*-moz-transition: all 0.5s ease-in-out;*/
+    /*-o-transition: all 0.5s ease-in-out;*/
+    /*transition: all 0.5s ease-in-out;*/
+/*}*/
+
+/*!* Styling for the ngProgress-container *!*/
+/*#ngProgress-container {*/
+    /*position: fixed;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*z-index: 99999;*/
+/*}*/
+
+.progress {
+    height: 100%;
+}
+.progress i {
+    line-height: 3.5em;
+}
+
+.progress-bar {
+    -webkit-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+}
+
+.circle {
+    position: absolute;
+    display: block;
+    background: black;
+    border-radius: 100%;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0;
+    background: radial-gradient(circle at 1px 1px, #ff00ff, #000);
+    z-index: 100000;
+}
+
+.content {
+    /*float: right;*/
+    position: absolute;
+    left: 50%;
+    /*text-align: left;*/
+}
+
+.main-branch-content {
+    /*position: absolute;*/
+    /*display: table;*/
+    z-index: 100000;
+    /*margin: auto;*/
+    left: -50%;
+    color: whitesmoke;
+}
+
+.branch-content {
+    /*position: absolute;*/
+    /*display: table;*/
+    z-index: 100000;
+    /*margin: auto;*/
+    left: -50%;
+    color: whitesmoke;
+}
+
+.main-branch {
+    height: 50%;
+    width: 100%;
+}
+
+.other-branch {
+    height: 25%;
+    width: 100%;
+}
+
+.pipeline-status {
+    height: auto;
+    width: 99%;
+    margin: 0 auto;
+    float: right;
+
+    position: relative;
+    text-align: left;
+}
+
+.blackboard {
+    background: black;
+}
