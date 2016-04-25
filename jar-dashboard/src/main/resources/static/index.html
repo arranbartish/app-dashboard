@@ -16,7 +16,10 @@
 <body ng-app="DashApp" class="blackboard">
 
 <div ng-controller="AppPurchases">
-    <purchases ng-repeat="purchase in purchases" data-pipeline="purchase"></purchases>
+    <table>
+        <purchases ng-repeat="purchase in purchases" data-purchase="purchase"></purchases>
+
+    </table>
 </div>
 
 </body>

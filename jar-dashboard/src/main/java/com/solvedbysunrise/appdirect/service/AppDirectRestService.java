@@ -1,6 +1,6 @@
 package com.solvedbysunrise.appdirect.service;
 
-import com.solvedbysunrise.appdirect.dto.EventDTO;
+import com.solvedbysunrise.appdirect.dto.EventDto;
 import com.solvedbysunrise.appdirect.oauth.HttpRequestSigningService;
 import com.solvedbysunrise.appdirect.oauth.UriTemplateHttpRequest;
 import org.slf4j.Logger;
@@ -25,11 +25,11 @@ public class AppDirectRestService {
     @Autowired
     private HttpRequestSigningService signingService;
 
-    public EventDTO getSubscriptionEvent(final String resourceUri) {
+    public EventDto getSubscriptionEvent(final String resourceUri) {
         return getEvent(resourceUri);
     }
 
-    private EventDTO getEvent(String resourceUri) {
+    private EventDto getEvent(String resourceUri) {
         UriTemplateHttpRequest signedRequest = signingService.sign(
                 withUrl(resourceUri)
                         .method(GET)
@@ -38,9 +38,9 @@ public class AppDirectRestService {
 
         HttpEntity entity = new HttpEntity(signedRequest.getHeaders());
 
-        ResponseEntity<EventDTO> response = restTemplate.exchange(
+        ResponseEntity<EventDto> response = restTemplate.exchange(
                 signedRequest.getRequestUri(),
-                signedRequest.getHttpMethod(), entity, EventDTO.class);
+                signedRequest.getHttpMethod(), entity, EventDto.class);
 
 
         LOGGER.info(response.getBody().toString());

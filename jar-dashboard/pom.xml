@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>com.solvedbysunrise.appdirect</groupId>
 		<artifactId>app-dashboard-parent</artifactId>
-		<version>0.0.15</version>
+		<version>0.0.16</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
@@ -73,9 +73,7 @@
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth</artifactId>
-            <version>2.0.9.RELEASE</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -103,10 +101,10 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
-        <dependency>
-            <groupId>net.oauth.core</groupId>
-            <artifactId>oauth-provider</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.oauth.core</groupId>-->
+            <!--<artifactId>oauth-provider</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 	
 	<build>
