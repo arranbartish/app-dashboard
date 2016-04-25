@@ -27,7 +27,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {AppDirectDashboardApplication.class, TestConfiguration.class})
 @IntegrationTest
-public class EventDaoTest {
+public class EventDaoIntegrationTest {
 
     private static final Event EXPECTED_EVENT = buildEvent();
 

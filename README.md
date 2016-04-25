@@ -1,5 +1,36 @@
 # app-dashboard
-A dashboard for apps connected to app direct
+A dashboard for app connected to app direct. I've stayed pretty close to the ideals of a 12 factor app.
+
+I. Codebase
+Single code base using gitflow and multiple version. 
+
+II. Dependencies
+All dependencies are isolated especially SNAPSHOT intermodule dependencies. This can be see in the way the pipeline is built
+
+III. Config
+The app comes with some configurable defaults, however the keys and environment specific items are configured on heroku
+
+IV. Backing services
+Besides the database the only service being used is appdirect which is being used as a service.
+
+V. Build, release, run
+The pipeline has this at its heart
+
+VI. Processes
+App is stateless except for the spring security session, though this can be swapped out got reddit
+
+VII. Port binding
+Export services via port binding
+VIII. Concurrency
+Scale out via the process model
+IX. Disposability
+Maximize robustness with fast startup and graceful shutdown
+X. Dev/prod parity
+Keep development, staging, and production as similar as possible
+XI. Logs
+Treat logs as event streams
+XII. Admin processes
+Run admin/management tasks as 
 
 # Install notes
 ## As a deployable jar ( Prefered )
@@ -41,3 +72,8 @@ The jar is always built and tested by default with no additional effort.
 
 #### The war
 The war only builds when the JAR-AND-WAR maven profile is used. The cargo plugin is bound to the pre-integration-test phase and deploys the packaged war for confirming the deployable
+
+
+### Improvements
+- Move the GUI from old school server side to angular JS 
+- Dockerize the artifact so that testing and deployment use the same artifact

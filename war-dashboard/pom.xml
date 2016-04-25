@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>com.solvedbysunrise.appdirect</groupId>
 		<artifactId>app-dashboard-parent</artifactId>
-		<version>0.0.14</version>
+		<version>0.0.15</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
@@ -59,6 +59,56 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>unpack-jar-dashboard</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.solvedbysunrise.appdirect</groupId>
+                                    <artifactId>app-dashboard</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/app-dashboard-jar-unpacked</outputDirectory>
+                                    <destFileName>app-dashboard-jar-unpacked.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/app-dashboard-jar-unpacked</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <tasks>
+                                <copy todir="${project.build.directory}/${project.build.finalName}/static">
+                                <fileset dir="${project.build.directory}/app-dashboard-jar-unpacked/static" includes="**/*" />
+                                </copy>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>

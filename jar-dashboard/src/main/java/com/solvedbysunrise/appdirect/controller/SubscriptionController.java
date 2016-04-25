@@ -1,6 +1,8 @@
-package com.solvedbysunrise.appdirect;
+package com.solvedbysunrise.appdirect.controller;
 
-import com.solvedbysunrise.appdirect.service.CreateSubscriptionRestService;
+import com.solvedbysunrise.appdirect.dto.Result;
+import com.solvedbysunrise.appdirect.service.AppDirectRestService;
+import com.solvedbysunrise.appdirect.service.SubscriptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static com.solvedbysunrise.appdirect.ResultFactory.failureResult;
-import static com.solvedbysunrise.appdirect.ResultFactory.successfulResult;
+import static com.solvedbysunrise.appdirect.dto.ResultFactory.failureResult;
+import static com.solvedbysunrise.appdirect.dto.ResultFactory.successfulResult;
 import static org.springframework.http.HttpStatus.ACCEPTED;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -26,16 +28,13 @@ public class SubscriptionController {
     private final static Logger LOGGER = LoggerFactory.getLogger(SubscriptionController.class);
 
     @Autowired
-    private CreateSubscriptionRestService subscriptionRestService;
+    private SubscriptionService subscriptionService;
 
     @RequestMapping(value = "/create/notification",method = GET)
     @ResponseStatus(code = ACCEPTED)
     public Result createSubscription(HttpServletRequest request, @RequestParam String resource, @RequestParam String token) {
 
-        LOGGER.info(String.format("key: resource value: %s", resource));
-        LOGGER.info(String.format("key: token value: %s", resource));
-
-        subscriptionRestService.createSubscription(resource);
+        subscriptionService.createSubscriptionEvent(resource);
         return successfulResult(SUCCESS_MESSAGE, token);
     }
 
@@ -44,8 +43,6 @@ public class SubscriptionController {
     @ResponseStatus(code = ACCEPTED)
     public Result cancelSubscription(@RequestParam String resource, @RequestParam String token) {
 
-        LOGGER.info(String.format("key: resource value: %s", resource));
-        LOGGER.info(String.format("key: token value: %s", resource));
 
         return successfulResult(SUCCESS_MESSAGE, token);
     }

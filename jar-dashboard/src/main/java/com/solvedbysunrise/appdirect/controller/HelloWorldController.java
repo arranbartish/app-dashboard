@@ -1,4 +1,4 @@
-package com.solvedbysunrise.appdirect;
+package com.solvedbysunrise.appdirect.controller;
 
 import com.solvedbysunrise.appdirect.dto.Hello;
 import org.springframework.web.bind.annotation.RequestMapping;

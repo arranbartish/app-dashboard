@@ -1,6 +1,7 @@
-package com.solvedbysunrise.appdirect;
+package com.solvedbysunrise.appdirect.dto;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.solvedbysunrise.appdirect.RefelctiveBean;
 
 @JsonRootName(value = "result")
 public class Result extends RefelctiveBean {
@@ -13,7 +14,7 @@ public class Result extends RefelctiveBean {
         return success;
     }
 
-    public void setSuccess(boolean success) {
+    void setSuccess(boolean success) {
         this.success = success;
     }
 

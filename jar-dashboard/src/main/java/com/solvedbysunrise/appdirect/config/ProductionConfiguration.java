@@ -23,10 +23,10 @@ public class ProductionConfiguration implements DashboardConfiguration {
     @Value("${appdirect.api.key:not-my-key}")
     private String appdirectApiKey;
 
-    @Value("${appdirect.oauth.consumer.key:appdashboard-106604}") // FIXME: DO NOT commit
+    @Value("${appdirect.oauth.consumer.key:changed-key}")
     private String oauthConsumerKey;
 
-    @Value("${appdirect.oauth.consumer.secret:KRYILry89LhX}") // FIXME: DO NOT commit
+    @Value("${appdirect.oauth.consumer.secret:changed-secret}")
     private String oauthConsumerSecret;
 
     @Override
