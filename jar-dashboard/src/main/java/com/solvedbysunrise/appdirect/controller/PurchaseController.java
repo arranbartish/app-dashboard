@@ -1,15 +1,13 @@
 package com.solvedbysunrise.appdirect.controller;
 
-import com.solvedbysunrise.appdirect.dto.Purchase;
+import com.solvedbysunrise.appdirect.dto.PurchaseDto;
 import com.solvedbysunrise.appdirect.service.SubscriptionService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -33,7 +31,7 @@ public class PurchaseController {
 
     @RequestMapping(method = GET)
     @ResponseStatus(code = ACCEPTED)
-    public Collection<Purchase> getPurchases() {
+    public Collection<PurchaseDto> getPurchases() {
         return subscriptionService.getPurchases();
     }
 }

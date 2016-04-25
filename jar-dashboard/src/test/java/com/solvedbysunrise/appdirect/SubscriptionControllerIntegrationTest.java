@@ -1,7 +1,7 @@
 package com.solvedbysunrise.appdirect;
 
 import com.solvedbysunrise.appdirect.config.TestConfiguration;
-import com.solvedbysunrise.appdirect.dto.Result;
+import com.solvedbysunrise.appdirect.dto.ResultDto;
 import com.solvedbysunrise.appdirect.oauth.HttpRequestSigningService;
 import com.solvedbysunrise.appdirect.oauth.OAuthConsumerFactory;
 import com.solvedbysunrise.appdirect.oauth.UriTemplateHttpRequest;
@@ -25,7 +25,7 @@ import org.springframework.web.util.UriTemplate;
 import java.net.URI;
 
 import static com.solvedbysunrise.appdirect.MockServerController.EVENT_PATH;
-import static com.solvedbysunrise.appdirect.dto.ResultFactory.successfulResult;
+import static com.solvedbysunrise.appdirect.dto.factories.ResultFactory.successfulResult;
 import static com.solvedbysunrise.appdirect.controller.SubscriptionController.SUCCESS_MESSAGE;
 import static com.solvedbysunrise.appdirect.oauth.UriTemplateHttpRequestBuilder.withUrl;
 import static com.solvedbysunrise.appdirect.util.UriUtil.getFullyQualifiedUriPattern;
@@ -54,7 +54,7 @@ public class SubscriptionControllerIntegrationTest {
     private HttpRequestSigningService signingService;
 
     private static final String TOKEN = "A-TOKEN";
-    private static final Result EXPECTED_SUCCESS_RESULT = successfulResult(SUCCESS_MESSAGE, TOKEN);
+    private static final ResultDto EXPECTED_SUCCESS_RESULT = successfulResult(SUCCESS_MESSAGE, TOKEN);
 
     private static final String SUBSCRIPTION_URI = "/subscription/create/notification?resource={resource}&token={token}";
 
@@ -82,9 +82,9 @@ public class SubscriptionControllerIntegrationTest {
     @Test
     public void create_subscription_will_return_accepted() throws Exception {
         HttpEntity entity = new HttpEntity(signedRequest.getHeaders());
-        ResponseEntity<Result> response = restTemplate.exchange(
+        ResponseEntity<ResultDto> response = restTemplate.exchange(
                 signedRequest.getRequestUri(),
-                signedRequest.getHttpMethod(), entity, Result.class);
+                signedRequest.getHttpMethod(), entity, ResultDto.class);
 
         assertThat(response.getStatusCode(), is(ACCEPTED));
     }
@@ -92,9 +92,9 @@ public class SubscriptionControllerIntegrationTest {
     @Test
     public void create_subscription_will_return_success_result() throws Exception {
         HttpEntity entity = new HttpEntity(signedRequest.getHeaders());
-        ResponseEntity<Result> response = restTemplate.exchange(
+        ResponseEntity<ResultDto> response = restTemplate.exchange(
                 signedRequest.getRequestUri(),
-                signedRequest.getHttpMethod(), entity, Result.class);
+                signedRequest.getHttpMethod(), entity, ResultDto.class);
 
         assertThat(response.getBody(), is(EXPECTED_SUCCESS_RESULT));
     }

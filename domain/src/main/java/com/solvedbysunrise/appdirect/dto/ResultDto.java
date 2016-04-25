@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.solvedbysunrise.appdirect.RefelctiveBean;
 
 @JsonRootName(value = "result")
-public class Result extends RefelctiveBean {
+public class ResultDto extends RefelctiveBean {
 
     private boolean success;
     private String message;
@@ -14,7 +14,7 @@ public class Result extends RefelctiveBean {
         return success;
     }
 
-    void setSuccess(boolean success) {
+    public void setSuccess(boolean success) {
         this.success = success;
     }
 

@@ -29,7 +29,7 @@ angular.module("DashApp", ["ngAnimate","ui.bootstrap"])
     .directive('purchases', function() {
         return {
             restrict: 'E',
-            replace: 'false',
+            replace: 'true',
             scope: {
                 purchase: '='
             },
