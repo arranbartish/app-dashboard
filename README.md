@@ -1,48 +1,13 @@
 # app-dashboard
 A dashboard for app connected to app direct. I've stayed pretty close to the ideals of a 12 factor app.
 
+## dev url
+https://arran-app-dashboard.herokuapp.com
+
 ## Improvements / limitations
 - Dockerize the artifact so that testing and deployment use the same artifact
 - There is a bug in the war distribution. While the API components work as expected, the static dashboard resources do not resolve
 - not implemented the openID integration
-
-## 12 factor app
-
-### I. Codebase
-Single code base using gitflow and multiple version. 
-
-### II. Dependencies
-All dependencies are isolated especially SNAPSHOT intermodule dependencies. This can be see in the way the pipeline is built
-
-### III. Config
-The app comes with some configurable defaults, however the keys and environment specific items are configured on heroku
-
-### IV. Backing services
-Besides the database the only service being used is appdirect which is being used as a service.
-
-### V. Build, release, run
-The pipeline has this at its heart
-
-### VI. Processes
-App is stateless except for the spring security session, though this can be swapped out got reddit
-
-### VII. Port binding
-Self contained... except of course for the optional war component.
-
-### VIII. Concurrency
-Stateless. If the app supported user authentication I would have used redis and not app session 
-
-### IX. Disposability
-Totally disposable.
-
-### X. Dev/prod parity
-The app code deployed locally, used on CI, and on heroku is the same. This could be improved by using docker.
-
-### XI. Logs
-Logs have not been used too much in this case.
-
-###  XII. Admin processes
-No real admin processes.
 
 # Install notes
 ## As a deployable jar ( Prefered )
@@ -89,3 +54,40 @@ The jar is always built and tested by default with no additional effort.
 #### The war
 The war only builds when the JAR-AND-WAR maven profile is used. The cargo plugin is bound to the pre-integration-test phase and deploys the packaged war for confirming the deployable
 
+## 12 factor app
+
+### I. Codebase
+Single code base using gitflow and multiple version. 
+
+### II. Dependencies
+All dependencies are isolated especially SNAPSHOT intermodule dependencies. This can be see in the way the pipeline is built
+
+### III. Config
+The app comes with some configurable defaults, however the keys and environment specific items are configured on heroku
+
+### IV. Backing services
+Besides the database the only service being used is appdirect which is being used as a service.
+
+### V. Build, release, run
+The pipeline has this at its heart
+
+### VI. Processes
+App is stateless except for the spring security session, though this can be swapped out got reddit
+
+### VII. Port binding
+Self contained... except of course for the optional war component.
+
+### VIII. Concurrency
+Stateless. If the app supported user authentication I would have used redis and not app session 
+
+### IX. Disposability
+Totally disposable.
+
+### X. Dev/prod parity
+The app code deployed locally, used on CI, and on heroku is the same. This could be improved by using docker.
+
+### XI. Logs
+Logs have not been used too much in this case.
+
+###  XII. Admin processes
+No real admin processes.
