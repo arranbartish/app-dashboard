@@ -29,6 +29,12 @@ public class ProductionConfiguration implements DashboardConfiguration {
     @Value("${appdirect.oauth.consumer.secret:changed-secret}")
     private String oauthConsumerSecret;
 
+    @Value("${google.oauth2.clientId:some-key}")
+    private String oauth2ClientId;
+
+    @Value("${google.oauth2.clientSecret:some-client}")
+    private String oauth2ClientSecret;
+
     @Override
     @Bean(name = "dashboardBaseUrl")
     public String dashboardBaseUrl() {
@@ -73,4 +79,17 @@ public class ProductionConfiguration implements DashboardConfiguration {
     public String oauthConsumerSecret() {
         return oauthConsumerSecret;
     }
+
+    @Override
+    @Bean(name = "oauth2ClientId")
+    public String oauth2ClientId() {
+        return oauth2ClientId;
+    }
+
+    @Override
+    @Bean(name = "oauth2ClientSecret")
+    public String oauth2ClientSecret() {
+        return oauth2ClientSecret;
+    }
+
 }

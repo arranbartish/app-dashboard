@@ -19,4 +19,8 @@ public interface DashboardConfiguration {
     String oauthConsumerKey();
 
     String oauthConsumerSecret();
+
+    String oauth2ClientId();
+
+    String oauth2ClientSecret();
 }
